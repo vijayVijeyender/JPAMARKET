@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+     file: db/changelog/create_table_user.sql
+  - include:
+      file: db/changelog/create_table_brand.sql
+  - include:
+      file: db/changelog/create_table_category.sql
+  - include:
+      file: db/changelog/create_table_product.sql

@@ -14,4 +14,5 @@ public interface ProductMapper {
 
     ProductDto toDto(Product product);
     List<ProductDto> toDtos(List<Product> products);
+    Product toEntity(ProductDto productDto);
 }

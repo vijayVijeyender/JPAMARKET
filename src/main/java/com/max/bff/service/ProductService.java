@@ -5,6 +5,7 @@ import com.max.bff.entity.Product;
 import com.max.bff.mapper.ProductMapper;
 import com.max.bff.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
+    @Autowired
     private  ProductRepository productRepository;
     private  ProductMapper productMapper;
 

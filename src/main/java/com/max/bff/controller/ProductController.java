@@ -15,8 +15,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping
+    @GetMapping
     public List<Product> getmethod(){
+
         return productService.getMethod();
     }
 }

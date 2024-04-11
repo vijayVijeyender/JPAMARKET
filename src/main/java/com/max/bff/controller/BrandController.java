@@ -1,7 +1,6 @@
 package com.max.bff.controller;
 
 
-import com.max.bff.dto.BrandDto;
 import com.max.bff.entity.Brand;
 import com.max.bff.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ public class BrandController {
 
     @Autowired
     BrandService brandService;
-    private BrandDto dto;
+
 
     @PostMapping("/createbrand")
     @ResponseStatus(value = HttpStatus.CREATED, reason="Brand Created Successfully")

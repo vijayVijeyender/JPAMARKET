@@ -11,8 +11,12 @@ import lombok.Setter;
 @Setter
 @JsonInclude
 public class ProductDto {
-    @JsonProperty("id")
-    private Long id;
-    @JsonProperty("itemName")
+    @JsonProperty("bName")
+    private String bName; //brandname
+    @JsonProperty("cName")
+    private String cName; //categoryname
     private String productName;
+    private String productNameTn;
+    private String productDescription;
+    private String productDescriptionTn;
 }

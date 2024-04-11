@@ -17,7 +17,10 @@ public class ProductController {
 
     @GetMapping
     public List<Product> getmethod(){
-
         return productService.getMethod();
+    }
+    @PostMapping("/createProduct")
+    public void saveProduct(@RequestBody ProductDto productDto){
+        productService.saveProduct(productDto);
     }
 }

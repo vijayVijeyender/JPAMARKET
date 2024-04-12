@@ -5,9 +5,12 @@ import com.max.bff.entity.Brand;
 import com.max.bff.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 
 @RestController
@@ -18,11 +21,9 @@ public class BrandController {
     @Autowired
     BrandService brandService;
 
-
     @PostMapping("/createbrand")
-    @ResponseStatus(value = HttpStatus.CREATED, reason="Brand Created Successfully")
-    public Brand addBrand(@RequestBody Brand brand){
-        return brandService.saveBrand(brand);
+    public ResponseEntity<Brand> addBrand(@RequestBody Brand brand){
+        return ok(brandService.saveBrand(brand));
     }
 
     @GetMapping()

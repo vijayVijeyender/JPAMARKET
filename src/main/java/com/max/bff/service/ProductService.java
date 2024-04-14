@@ -46,8 +46,12 @@ public class ProductService {
             product=  productMapper.toEntity(productDto);
             product.setCid(category.getId());
             product.setBid(brand.getId());
+            try{
             productRepository.save(product);
-            return "save succesfully";
+            return "save succesfully";}
+            catch(Exception e){
+                throw new TechnicalException("Product Already Exist", HttpStatus.CONFLICT);
+            }
 
         }
     }

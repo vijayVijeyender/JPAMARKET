@@ -1,5 +1,6 @@
 package com.max.bff.service;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import com.max.bff.dto.ProductDto;
 import com.max.bff.entity.Brand;
 import com.max.bff.entity.Product;
@@ -53,6 +54,24 @@ public class ProductService {
                 throw new TechnicalException("Product Already Exist", HttpStatus.CONFLICT);
             }
 
+        }
+    }
+
+    public String updateProduct(Product product) {
+        try {
+            productRepository.save(product);
+            return "updated Successfully";
+        }catch(Exception e){
+            throw new TechnicalException("Product updation failed", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public List<Product> getProductsByCategory(Long categoryId) {
+        try{
+           return productRepository.findByCid(categoryId);
+        }
+        catch (Exception e){
+            throw new TechnicalException("No products found", HttpStatus.NOT_FOUND);
         }
     }
 }

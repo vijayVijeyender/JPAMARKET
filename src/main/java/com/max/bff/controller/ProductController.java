@@ -27,4 +27,14 @@ public class ProductController {
     public ResponseEntity<String> saveProduct(@RequestBody ProductDto productDto){
         return ok(productService.saveProduct(productDto));
     }
+
+    @PutMapping()
+    public ResponseEntity<String> updateProduct(@RequestBody Product product){
+        return ok(productService.updateProduct(product));
+    }
+
+    @GetMapping("/productcategory/{categoryId}")
+    public ResponseEntity<List<Product>> getProductByCategory(@PathVariable Long categoryId ){
+        return ok(productService.getProductsByCategory(categoryId));
+    }
 }
